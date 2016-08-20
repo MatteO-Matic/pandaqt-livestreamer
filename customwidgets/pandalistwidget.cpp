@@ -16,9 +16,7 @@ PandaListWidget::~PandaListWidget()
 
 }
 
-/**
- * This should later have a threshold by checking the actiontrigger if user keeps scrolling over max
- */
+//This should later have a threshold by checking the actiontrigger if user keeps scrolling over max
 void PandaListWidget::verticalScrollbarValueChanged(int value)
 {
     QListWidget::verticalScrollbarValueChanged(value);

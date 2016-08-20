@@ -18,7 +18,6 @@ private slots:
 private:
         QLabel* hintMessage;
 
-
 signals:
      void scrollPulled();
 
