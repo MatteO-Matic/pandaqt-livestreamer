@@ -9,6 +9,7 @@ public:
 
     static QNetworkReply* RequestGameCategories();
     static QNetworkReply *RequestUrl(QUrl url);
+    static QNetworkReply* GetLiveListByCategory(QString category, int pageno, int pagenum);
 
 private:
 

@@ -66,7 +66,6 @@ void FormGameCategories::slot_finishedGameCategories()
 void FormGameCategories::slot_handleClicked(QListWidgetItem *widget)
 {
     pandatvGameCategoryThumbnail *pandaWidget = (pandatvGameCategoryThumbnail*)widget;
-
     emit categoryChanged(pandaWidget->getEname());
 }
 
