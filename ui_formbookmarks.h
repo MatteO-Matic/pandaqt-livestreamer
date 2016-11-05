@@ -15,11 +15,11 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "customwidgets/imagebutton.h"
+#include "customwidgets/pandalistwidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -31,7 +31,7 @@ public:
     QHBoxLayout *horizontalLayout;
     ImageButton *m_buttonRefresh_Bookmarks;
     QSpacerItem *horizontalSpacer_2;
-    QListWidget *m_listBookmarksWidget;
+    PandaListWidget *m_listBookmarksWidget;
 
     void setupUi(QWidget *FormBookmarks)
     {
@@ -64,7 +64,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        m_listBookmarksWidget = new QListWidget(FormBookmarks);
+        m_listBookmarksWidget = new PandaListWidget(FormBookmarks);
         m_listBookmarksWidget->setObjectName(QStringLiteral("m_listBookmarksWidget"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy1.setHorizontalStretch(0);

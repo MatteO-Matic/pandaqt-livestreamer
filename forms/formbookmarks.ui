@@ -59,7 +59,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QListWidget" name="m_listBookmarksWidget">
+      <widget class="PandaListWidget" name="m_listBookmarksWidget">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -116,6 +116,11 @@
    <class>ImageButton</class>
    <extends>QLabel</extends>
    <header>customwidgets/imagebutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PandaListWidget</class>
+   <extends>QListWidget</extends>
+   <header>customwidgets/pandalistwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>
