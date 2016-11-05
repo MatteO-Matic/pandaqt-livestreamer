@@ -9,6 +9,7 @@ FormBookmarks::FormBookmarks(QWidget *parent, FormSettings *formsettings) :
     QWidget(parent),
     ui(new Ui::FormBookmarks)
 {
+    qDebug() << "Setup FormBookmarks";
     ui->setupUi(this);
     frm_settings = formsettings;
 
@@ -31,6 +32,27 @@ FormBookmarks::FormBookmarks(QWidget *parent, FormSettings *formsettings) :
 FormBookmarks::~FormBookmarks()
 {
     delete ui;
+}
+
+void FormBookmarks::slot_handleClicked(QListWidgetItem* item)
+{
+    QString program = "livestreamer";
+    QStringList arguments;
+
+
+    arguments <<"http://www.panda.tv/" + ((pandatvChannelThumbnail*)item)->getId();
+    arguments = arguments + frm_settings->getFullCommand().split(QRegExp("\\s"));
+
+    QProcess* myProcess = new QProcess(qApp);
+    myProcess->start(program, arguments);
+
+    connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(readOutput()));
+}
+
+void FormBookmarks::readOutput()
+{
+    QByteArray outData = ((QProcess*)sender())->readAllStandardOutput();
+    qDebug().noquote()<<"livestreamer: "<< QString(outData);
 }
 
 void FormBookmarks::slot_onBookmarkContextMenu(const QPoint &pos)

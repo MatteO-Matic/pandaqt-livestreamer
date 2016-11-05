@@ -9,8 +9,8 @@ FormChannels::FormChannels(QWidget *parent, FormSettings *formsettings) :
     QWidget(parent),
     ui(new Ui::FormChannels)
 {
+    qDebug() << "Setup FormChannels";
     ui->setupUi(this);
-
     frm_settings = formsettings;
     /*  Toolbar
      * */
@@ -61,6 +61,11 @@ void FormChannels::clearChannelList()
 {
     m_pagesRequested =1;
     ui->m_listChannels->clear();
+}
+
+void FormChannels::slot_categoryChanged(QString category)
+{
+    requestChannelList(category);
 }
 
 void FormChannels::readOutput()

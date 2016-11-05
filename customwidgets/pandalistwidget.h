@@ -2,6 +2,7 @@
 #define MOUSEEVENTLISTWIDGET_H
 #include <QListWidget>
 #include <QLabel>
+#include <customwidgets/pandatvchannelthumbnail.h>
 
 
 class PandaListWidget : public QListWidget
@@ -10,6 +11,8 @@ class PandaListWidget : public QListWidget
 public:
     PandaListWidget(QWidget *parent = 0);
     ~PandaListWidget();
+    pandatvChannelThumbnail *itemAt(const QPoint &p) const;
+
 protected:
     void verticalScrollbarValueChanged(int value) override;
 

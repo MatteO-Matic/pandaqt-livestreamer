@@ -19,20 +19,25 @@ Pandaqt5::Pandaqt5(QWidget *parent) :
     ui(new Ui::Pandaqt5)
 {
     ui->setupUi(this);
+    qDebug() << "Adding forms";
 
     //Adding forms
-    frm_channels = new FormChannels(ui->tabWidget);
-    ui->tabWidget->addTab(frm_channels, "Channels");
-
-    frm_bookmarks = new FormBookmarks(ui->tabWidget);
-    ui->tabWidget->addTab(frm_bookmarks, "Bookmarks");
-
     frm_settings = new FormSettings(ui->tabWidget);
     ui->tabWidget->addTab(frm_settings, "Settings");
 
+    frm_channels = new FormChannels(ui->tabWidget, frm_settings);
+    ui->tabWidget->addTab(frm_channels, "Channels");
+
+    frm_bookmarks = new FormBookmarks(ui->tabWidget, frm_settings);
+    ui->tabWidget->addTab(frm_bookmarks, "Bookmarks");
+
     frm_gameCategories = new FormGameCategories(ui->tabWidget);
     ui->tabWidget->addTab(frm_gameCategories, "GameCategories");
+
     connect(frm_gameCategories, SIGNAL(categoryChanged(QString)), this, SLOT(slot_categoryChanged(QString)));
+    connect(frm_gameCategories, SIGNAL(categoryChanged(QString)), frm_channels, SLOT(slot_categoryChanged(QString)));
+
+    connect(frm_channels, SIGNAL(addedBookmark(QString)), frm_bookmarks, SLOT(slot_addBookmark(QString)));
 
     ui->tabWidget->tabBar()->hide();
     //end add forms
@@ -72,7 +77,6 @@ void Pandaqt5::changeEvent(QEvent *event)
 
 void Pandaqt5::slot_categoryChanged(QString category)
 {
-    frm_channels->requestChannelList(category);
     ui->tabWidget->setCurrentWidget(frm_channels);
 }
 

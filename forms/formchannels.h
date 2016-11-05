@@ -18,12 +18,10 @@ class FormChannels : public QWidget
 public:
     FormChannels(QWidget *parent = 0, FormSettings *formsettings =0);
     ~FormChannels();
-    void requestChannelList(QString category);
 
 private:
     Ui::FormChannels *ui;
     FormSettings*frm_settings;
-    void readOutput();
     int m_pagesRequested = 1; //1 is the first page
     QString m_currentCategory;
     QNetworkReply* m_replyChannelList;
@@ -31,10 +29,14 @@ private:
     void clearChannelList();
     bool m_bRefreshingChannels;
     pandatvChannelThumbnail *m_lastRightclickedChannelWidget;
+    void requestChannelList(QString category);
+
+public slots:
+    void slot_categoryChanged(QString category);
 
 private slots:
+    void readOutput();
     void slot_getChannelList_requestFinished();
-    void slot_getChannelInfo_requestFinished();
     void slot_contextmenu_addBookmark();
     void slot_onCustomContextMenu(const QPoint &pos);
     void slot_handleClicked(QListWidgetItem* item);

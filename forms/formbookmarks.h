@@ -28,6 +28,8 @@ private slots:
         void slot_onBookmarkContextMenu(const QPoint &pos);
         void slot_getChannelInfo_requestFinished();
 
+        void slot_handleClicked(QListWidgetItem *item);
+        void readOutput();
 private:
     Ui::FormBookmarks *ui;
     void loadBookmarksintoWidget();

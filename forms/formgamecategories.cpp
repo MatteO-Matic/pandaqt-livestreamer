@@ -9,6 +9,7 @@ FormGameCategories::FormGameCategories(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormGameCategories)
 {
+    qDebug() << "Setup FormGameCategories";
     ui->setupUi(this);
 
     //handle click

@@ -16,6 +16,11 @@ PandaListWidget::~PandaListWidget()
 
 }
 
+pandatvChannelThumbnail *PandaListWidget::itemAt(const QPoint &p) const
+{
+    return (pandatvChannelThumbnail*)QListWidget::itemAt(p);
+}
+
 //This should later have a threshold by checking the actiontrigger if user keeps scrolling over max
 void PandaListWidget::verticalScrollbarValueChanged(int value)
 {

@@ -11,6 +11,7 @@ FormSettings::FormSettings(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormSettings)
 {
+    qDebug() << "Setup FormSettings";
     ui->setupUi(this);
 
     connect(ui->m_checkboxMinimizeToTray, SIGNAL(toggled(bool)), this, SLOT(slot_checkboxMinimizeToTray_toggled(bool)));
