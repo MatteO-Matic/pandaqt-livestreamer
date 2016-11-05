@@ -33,7 +33,7 @@ void PandaListWidget::verticalScrollbarValueChanged(int value)
     }
 }
 
-void PandaListWidget::slot_actionTriggerThreshold(int i)
+void PandaListWidget::slot_actionTriggerThreshold(int)
 {
     //qDebug() << i;
 }

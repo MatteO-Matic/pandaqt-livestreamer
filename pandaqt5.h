@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QSystemTrayIcon>
-#include <notificationcontroller.h>
 #include <QSystemTrayIcon>
 #include <forms/FormSettings.h>
 #include <forms/formgamecategories.h>
@@ -56,7 +55,6 @@ private:
 //    void clearChannelList();
 
     QSystemTrayIcon *m_trayIcon;
-    NotificationController*m_notifier;
 //    QNetworkAccessManager*m_networkAccessManager;
 
 //    void loadBookmarksintoWidget();

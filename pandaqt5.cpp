@@ -6,7 +6,6 @@
 #include <QUrl>
 
 #include "customwidgets/pandatvchannelthumbnail.h"
-#include "notificationcontroller.h"
 
 #include "forms/FormSettings.h"
 #include "forms/formgamecategories.h"
@@ -55,14 +54,11 @@ Pandaqt5::Pandaqt5(QWidget *parent) :
     //  m_trayIcon->setContextMenu(trayMenu);
     // connect(m_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(slot_handleActivateTray));
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &Pandaqt5::slot_handleActivateTray);
-
-    m_notifier = new NotificationController(this);
 }
 
 Pandaqt5::~Pandaqt5()
 {
     delete m_trayIcon;
-    delete m_notifier;
     delete ui;
 }
 
@@ -75,7 +71,7 @@ void Pandaqt5::changeEvent(QEvent *event)
             this->hide();
 }
 
-void Pandaqt5::slot_categoryChanged(QString category)
+void Pandaqt5::slot_categoryChanged(QString)
 {
     ui->tabWidget->setCurrentWidget(frm_channels);
 }
