@@ -1,8 +1,7 @@
-#PandaTv QT livestreamer GUI
+# PandaTv QT livestreamer GUI
 PandaTvQt is a graphical user interface for managing your favorite streams on panda.tv and play them in VLC through Chrippa's Livestreamer.
-(img)
 
-##Dependencies
+## Dependencies
 You need to install livestreamer and add the PandaTv plugin.
 
 [Livestreamer (by Chrippa)](http://docs.livestreamer.io/install.html)
@@ -18,7 +17,7 @@ Windows
 ```
 If the plugins folder doesn't exist, just create a new one.
 
-##Features
+## Features
 * Browse streams
 * Bookmark channels
 * Get notifications when bookmarked streamer comes online
