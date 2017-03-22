@@ -7,6 +7,7 @@ You need to install livestreamer and add the PandaTv plugin.
 [Livestreamer (by Chrippa)](http://docs.livestreamer.io/install.html)
 [Livestreamer PandaTv plugin (by fatdeer)](https://raw.githubusercontent.com/fatdeer/livestreamer/add-pandatv-plugin/src/livestreamer/plugins/pandatv.py)
 Save the file as pandatv.py in your livestreamer plugins folder.
+
 Unix-like (POSIX)
 ```
 $XDG_CONFIG_HOME/livestreamer/plugins
