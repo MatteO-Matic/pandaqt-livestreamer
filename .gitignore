@@ -5,3 +5,5 @@ moc_*
 notes
 *.o
 Makefile
+ui_*
+qrc_thumbnail.cpp
