@@ -71,12 +71,12 @@ void FormChannels::slot_categoryChanged(QString category)
 void FormChannels::readOutput()
 {
     QByteArray outData = ((QProcess*)sender())->readAllStandardOutput();
-    qDebug().noquote()<<"livestreamer: "<< QString(outData);
+    qDebug().noquote()<<"streamlink: "<< QString(outData);
 }
 
 void FormChannels::slot_handleClicked(QListWidgetItem* item)
 {
-    QString program = "livestreamer";
+    QString program = "streamlink";
     QStringList arguments;
 
 

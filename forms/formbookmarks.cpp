@@ -36,7 +36,7 @@ FormBookmarks::~FormBookmarks()
 
 void FormBookmarks::slot_handleClicked(QListWidgetItem* item)
 {
-    QString program = "livestreamer";
+    QString program = "streamlink";
     QStringList arguments;
 
 
@@ -52,7 +52,7 @@ void FormBookmarks::slot_handleClicked(QListWidgetItem* item)
 void FormBookmarks::readOutput()
 {
     QByteArray outData = ((QProcess*)sender())->readAllStandardOutput();
-    qDebug().noquote()<<"livestreamer: "<< QString(outData);
+    qDebug().noquote()<<"streamlink: "<< QString(outData);
 }
 
 void FormBookmarks::slot_onBookmarkContextMenu(const QPoint &pos)
