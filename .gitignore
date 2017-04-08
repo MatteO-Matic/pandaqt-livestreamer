@@ -3,3 +3,5 @@ moc_*
 *.pro.user.*
 .qmake.stash
 notes
+*.o
+Makefile
