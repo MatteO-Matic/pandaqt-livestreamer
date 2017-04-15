@@ -6,6 +6,10 @@ You need to install streamlink.
 
 [Streamlink](https://streamlink.github.io/install.html)
 
+## Build
+qmake pandatv-qt5.pro
+make
+
 ## Features
 * Browse streams
 * Bookmark channels
