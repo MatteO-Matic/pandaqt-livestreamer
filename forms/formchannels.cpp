@@ -47,7 +47,7 @@ void FormChannels::slot_onScrollPulled()
     connect(m_replyChannelList, SIGNAL(finished()), this, SLOT(slot_getChannelList_requestFinished()));
 }
 
-void FormChannels::slot_on_buttonRefresh_clicked(QPoint *)
+void FormChannels::slot_on_buttonRefresh_clicked(QPoint *p)
 {
     if(!m_bRefreshingChannels)
     {
@@ -55,6 +55,7 @@ void FormChannels::slot_on_buttonRefresh_clicked(QPoint *)
         clearChannelList();
         requestChannelList(m_currentCategory);
     }
+    delete p;
 }
 
 void FormChannels::clearChannelList()

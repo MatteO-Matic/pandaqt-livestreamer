@@ -4,6 +4,7 @@
 #
 #-------------------------------------------------
 
+CONFIG+= static
 QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -62,6 +63,7 @@ RESOURCES += \
 
 #QT += LibsnoreQt5
 #QT += LibsnoreSettingsQt5
+
 
 #unix: CONFIG += link_pkgconfig
 #unix: PKGCONFIG += lsnore-qt5

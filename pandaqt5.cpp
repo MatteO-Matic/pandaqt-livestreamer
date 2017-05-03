@@ -49,10 +49,6 @@ Pandaqt5::Pandaqt5(QWidget *parent) :
     */
     m_trayIcon = new QSystemTrayIcon(QIcon(":/pandatray"));
     m_trayIcon->show();
-    // trayMenu = new QMenu(this);
-    // trayMenu->addAction("Test");
-    //  m_trayIcon->setContextMenu(trayMenu);
-    // connect(m_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(slot_handleActivateTray));
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &Pandaqt5::slot_handleActivateTray);
 }
 

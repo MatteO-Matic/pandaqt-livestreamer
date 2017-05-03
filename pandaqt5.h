@@ -39,27 +39,7 @@ private:
     FormBookmarks* frm_bookmarks;
     FormChannels * frm_channels;
 
-//    bool m_bRefreshingChannels;
-//    bool m_bRefreshingBookmarks;
-//    QString m_livestreamerFullCommand;
-//    QList<QNetworkReply*> m_replyChannelInfo;
-//    QNetworkReply* m_replyChannelList;
-//    QList<QNetworkReply*> m_listReplyChannelInfoOffline;
-//    QList<pandatvChannelThumbnail*> m_listBookmarkthumbnails;
-//    QListWidgetItem* m_lastRightclickedChannelWidget;
-//    QString m_currentCategory;
-//    Ui::Pandaqt5 *ui;
-//    QList<pandatvChannelThumbnail*> m_listChannelthumbnails;
-//    QList<pandatvChannelThumbnail*> m_listOfflineChannelthumbnails;
-
-//    void clearChannelList();
-
     QSystemTrayIcon *m_trayIcon;
-//    QNetworkAccessManager*m_networkAccessManager;
-
-//    void loadBookmarksintoWidget();
-
-//    QTimer *m_timerPollOfflineBookmarks = new QTimer(this);
 protected:
     void changeEvent(QEvent *);
 };
