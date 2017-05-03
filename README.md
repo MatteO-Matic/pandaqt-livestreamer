@@ -8,6 +8,7 @@ You need to install streamlink.
 
 ## Build
 qmake pandatv-qt5.pro
+
 make
 
 ## Features
